@@ -24,6 +24,7 @@ function serveStatic(response, cache, absPath)
 {
 	if (cache[absPath])
 	{
+		console.log("Ktoś próbuje się połączyć: "+ cache[absPath]);
 		sendFile(response, absPath, cache[absPath]);
 	}
 	else
