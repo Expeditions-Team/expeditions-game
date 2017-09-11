@@ -1,5 +1,5 @@
 {
-	"name": "Gra",
+	"name": "Expeditions: The beginning",
 	"version": "0.0.1",
 	"description": "Minimalistyczny serwer gry",
 	"main": "server.js",
@@ -7,7 +7,17 @@
 		"socket.io": "~2.0.3",
 		"mime": "~1.2.7"
 	},
+	"engine": {
+		"node": "*",
+		"npm": "*"
+	},
 	"scripts": {
 		"start": "node server.js"
-	}
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Expeditions-Team/expeditions-game.git"
+	},
+	"author": "Dirkuu <expeditions.team.game@gmail.com>",
+	"license": "CC-BY-1.0",
 }
