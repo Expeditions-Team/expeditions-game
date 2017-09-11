@@ -1,5 +1,5 @@
 var http = require('http'),
-	PORT = 8080,
+	PORT = 5858,
 	qs = require('querystring'),
 	fs = require('fs'),
 	path = require('path'),
