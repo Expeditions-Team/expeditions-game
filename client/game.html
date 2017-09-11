@@ -1,0 +1,147 @@
+<!doctype html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link href="/StyleSheets/gameSTYLE.css" type="text/css" rel="stylesheet" />
+		<!--<script src="/socket_io_1_3_7.js"></script>-->
+		<script src="https://cdn.socket.io/socket.io-1.3.7.js"></script>
+		<script src="/Maps/maps.js"></script>
+		<script src="/jQuery.js"></script>
+		<script src="/JavaScripts/engine.js"></script>
+		<script type="text/javascript">
+			//var socket = io();
+			//var socket = io.connect('http://localhost', { port: 8080 });
+			//const io = require('socket.io-client');
+			const socket = io({transports: ['websocket']});
+			//var socket = io.connect('//localhost:8080', {reconnection: false});
+			
+
+			socket.on('connect', function () {
+				console.log('Connect');
+			});
+
+			socket.on('error', function (data) {
+				console.log(data || 'Error');
+			});
+
+			socket.on('connect_failed', function (data) {
+				console.log(data || 'Connect_failed');
+			});
+		</script>
+	</head>
+	
+	<body>
+		<div id="main_box">
+			<div id="chat_box">
+				<div id="messages">
+				</div>
+				<input type="text" id="text_box">
+			</div>
+			
+			<div id="info_box">
+				<div id="base_info">
+					Dirkuu
+				</div>
+				<div id="bars">
+					<div id="life_bar" class="bar">
+					</div>
+					<div id="mana_bar" class="bar">
+					</div>
+					<div id="exp_bar" class="bar">
+					</div>
+				</div>
+				<!--
+				dwa buttony
+				-->
+			</div>
+			
+			<div id="char">
+				<script type="text/javascript">
+					var character = false;
+					character = new player("Dirkuu");
+					
+					
+					
+					character.handling_keyboard();
+					
+					var other_players = false;
+					other_players = new players();
+					
+					var max_players = 10;
+					
+					var shout = false;
+					shout = new shoutbox();
+					
+					
+					/*socket.on('download_first_info', function (data)
+					{
+						for (var i = 0; i < max_players; i++)
+						{
+							if (other_players.real_id[i] == undefined || other_players.real_id[i] == null)
+							{
+								//console.log(character.real_id +" != "+ data.real_id);
+								other_players.id[i] = "PLAYER"+ data.real_id;
+								other_players.real_id[i] = data.real_id;
+								other_players.nick[i] = data.nick;
+								other_players.X[i] = data.X;
+								other_players.Y[i] = data.Y;
+								other_players.lvl[i] = data.lvl;
+								
+								break;
+							
+							}
+						}*/
+					
+						/*var count_new_players = 0;
+						
+						for (var i = 0; count_new_players < 1; i++)
+						{	
+							if (other_players.real_id[i] == undefined || other_players.real_id[i] == null)
+							{
+								//console.log(character.real_id +" != "+ data.real_id);
+								if (character.real_id != data.real_id)
+								{
+									other_players.id[i] = "PLAYER"+ data.real_id;
+									other_players.real_id[i] = data.real_id;
+									other_players.nick[i] = data.nick;
+									other_players.X[i] = data.X;
+									other_players.Y[i] = data.Y;
+									other_players.lvl[i] = data.lvl;
+									
+									count_new_players++;
+								}
+							}
+							
+							if (i == max_players - 1) count_new_players++;
+						}*/
+					//});
+					
+					
+						
+						
+					/*socket.on('update_others_position', function (data)
+					{
+						/*for (var i = 0; i < max_players; i++)
+						{
+							if (other_players.real_id[i] == data.real_id)
+							{
+								other_players.real_id[i]
+							}
+						}*//*
+						if (character.real_id != data.real_id)
+						{
+							var index = other_players.real_id.indexOf(data.real_id);
+							console.log(index);
+							console.log(data.real_id +"["+ data.X +"]["+ data.Y +"]");
+							other_players.X[index] = data.X;
+							other_players.Y[index] = data.Y;
+						}
+					});*/
+				</script>
+			</div>
+			
+			<div id="often_used_items">
+			</div>
+		</div>
+	</body>
+</html>
