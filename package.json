@@ -2,9 +2,11 @@
 	"name": "Gra",
 	"version": "0.0.1",
 	"description": "Minimalistyczny serwer gry",
-	"main": "server.js",
 	"dependencies": {
 		"socket.io": "~2.0.3",
 		"mime": "~1.2.7"
+	},
+	"scripts": {
+		"start": "node server.js",
 	}
 }
