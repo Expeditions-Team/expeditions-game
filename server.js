@@ -162,7 +162,7 @@ server.listen(PORT, 'localhost', function()
 });*/
 
 
-
+/*
 
 
 
@@ -242,7 +242,7 @@ for (var i = 0; i < 3; i++)
 	players.bank[4] = 0;
 /*
 							Deklaracja klasy shoutboxa
-*/
+*//*
 function shoutbox ()
 {
 	this.id = new Array(10);
@@ -311,7 +311,7 @@ io.sockets.on('connection', function (socket)
 				console.log("i == "+ i +"\nplayers.real_id["+ i +"] == "+ players.real_id[i] +"\nplayers.nick["+ i +"] == "+ players.nick[i] +"\nplayers.socket_id["+ i +"] == "+ players.socket_id[i] +"\n");
 				/*
 							Wysyłanie wiadomości do Clienta o graczach w pobliżu
-				*/
+				*//*
 				socket.emit('first_infos_about_other_players',
 				{
 					real_id: players.real_id[i],
@@ -323,7 +323,7 @@ io.sockets.on('connection', function (socket)
 				
 				/*
 							Wysyłanie wiadomości do innych w pobliżu o nowo zalogowanym graczu
-				*/
+				*//*
 				socket.to(players.socket_id[i]).emit('info_about_new_log_in_player',
 				{
 					real_id: players.real_id[index],
@@ -513,5 +513,5 @@ io.sockets.on('connection', function (socket)
 	/*socket.on('new_player', function(nick)
 	{
 		io.emit('message', msg);
-	});*/
-});
+	});*//*
+});*/
