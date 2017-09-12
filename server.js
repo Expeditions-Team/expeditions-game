@@ -83,6 +83,7 @@ var server = http.createServer(function(request, response)
 server.listen(PORT, 'localhost', function()
 {
 	console.log("Serwer nasłuchuje na porcie "+ PORT +".");
+	console.log("Jakiś log");
 });
 
 
