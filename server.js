@@ -65,7 +65,7 @@ var initDb = function(callback)
 	});
 };
 
-app.use(express.static('client'));
+//app.use(express.static('client'));
 
 app.get('/', function (req, res)
 {
