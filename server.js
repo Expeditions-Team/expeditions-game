@@ -90,6 +90,7 @@ app.get('/', function (req, res)
 	{
 		res.render('index.html', { pageCountMessage : null});
 	}
+	console.log("Ktoś chciał się połączyć z \""+ reques.url +"\"");
 });
 
 app.get('/game', function (req, res)
@@ -115,6 +116,7 @@ app.get('/game', function (req, res)
 	{
 		res.render('game.html', { pageCountMessage : null});
 	}
+	console.log("Ktoś chciał się połączyć z \""+ reques.url +"\"");
 });
 
 app.get('/pagecount', function (req, res)
