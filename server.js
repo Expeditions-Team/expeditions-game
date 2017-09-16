@@ -1,8 +1,9 @@
 //  OpenShift sample Node application
-var	express	= require('express'),
-		http		= require('http'),
-		app		= express(),
+var	app	= require('express')(),
+		server		= require('http').Server(app),
+		io = require('socket.io')(server),
 		morgan	= require('morgan');
+		
     
 Object.assign=require('object-assign')
 
@@ -286,7 +287,7 @@ function shoutbox ()
 
 var shout = new shoutbox();
 
-var io = require('socket.io').listen(http.app);
+//var io = require('socket.io').listen(http.app);
 
 io.sockets.on('connection', function (socket)
 {
