@@ -5,19 +5,22 @@ var	express = require('express'),
 		io 		= require('socket.io')(server),
 		morgan	= require('morgan');
 		
-server.listen(8080, '127.0.0.1');
     
 Object.assign=require('object-assign')
 
 app.engine('html', require('ejs').renderFile);
 app.use(morgan('combined'))
 
-app.use(express.static('public'));
 
 var	port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080,
 		ip   = process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0',
 		mongoURL = process.env.OPENSHIFT_MONGODB_DB_URL || process.env.MONGO_URL,
 		mongoURLLabel = "";
+		
+
+app.use(express.static('public'));
+server.listen(port, ip);
+
 
 if (mongoURL == null && process.env.DATABASE_SERVICE_NAME)
 {
