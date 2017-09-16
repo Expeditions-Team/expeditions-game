@@ -410,7 +410,6 @@ player.prototype.conditions_x = function ()
 	else if (character.X >= max_map_x - 698)
 	{
 		$("#char").css({"left": character.X - max_map_x + 1363 +"px"});
-		console.log("Jesteś przy prawym skraju mapy");
 	}
 }
 
@@ -519,9 +518,9 @@ players.prototype.conditions_y = function ()
 		}
 		else if (character.Y >= max_map_y - 353)
 		{
-			var top = $("#PLAYER_"+ other_players.real_id[i]).position().top + (other_players.Y[index] - character.Y);
-			console.log(top);
-			$("#PLAYER_"+ other_players.real_id[i]).css({"top": top +"px"});
+			var bottom = max_map_y - other_players.Y[i];
+			//var top = $("#PLAYER_"+ other_players.real_id[i]).position().top + (other_players.Y[index] - character.Y);
+			$("#PLAYER_"+ other_players.real_id[i]).css({"bottom": bottom +"px"});
 		}
 	}
 };
