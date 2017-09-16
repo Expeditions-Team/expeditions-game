@@ -525,7 +525,7 @@ players.prototype.conditions_y = function (index)
 			//var top = $("#PLAYER_"+ other_players.real_id[i]).position().top + (other_players.Y[index] - character.Y);
 			$("#PLAYER_"+ other_players.real_id[index]).css({"bottom": bottom +"px"});
 		}
-	/}
+	//}
 };
 
 
