@@ -285,7 +285,7 @@ function shoutbox ()
 
 var shout = new shoutbox();
 
-var io = require('socket.io').listen(server);
+var io = require('socket.io').listen(app);
 
 io.sockets.on('connection', function (socket)
 {
