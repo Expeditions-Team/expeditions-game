@@ -19,6 +19,7 @@ var	port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080,
 		
 
 app.use(express.static('public'));
+console.log("Trying to start server with config:", ip + ":" + port);
 server.listen(port, ip);
 
 
