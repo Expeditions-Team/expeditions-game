@@ -365,10 +365,6 @@ player.prototype.handling_keyboard = function ()					//Celem przebudowy jest wyj
 			character.conditions_x();
 			other_players.conditions_x();
 		}
-		else if (map[68])
-		{
-			console.log("Prawo");
-		}
 		/*else
 		{
 			console.log(e.type +" | "+ e.typeof);
@@ -498,7 +494,8 @@ players.prototype.conditions_x = function ()
 		}
 		else if (character.X >= max_map_x - 698)
 		{
-			var left = $("#PLAYER_"+ other_players.real_id[i]).position().left + (other_players.X[index] - character.X);
+			var left = 666 + (other_players.X[index] - character.X);
+			//var left = $("#PLAYER_"+ other_players.real_id[i]).position().left + (other_players.X[index] - character.X);
 			$("#PLAYER_"+ other_players.real_id[i]).css({"left": left +"px"});
 		}
 	}
