@@ -1,7 +1,8 @@
 //  OpenShift sample Node application
-var	app	= require('express')(),
-		server		= require('http').Server(app),
-		io = require('socket.io')(server),
+var	express = require('express'),
+		app		= express(),
+		server	= require('http').Server(app),
+		io 		= require('socket.io')(server),
 		morgan	= require('morgan');
 		
     
