@@ -493,10 +493,12 @@ players.prototype.conditions_x = function ()
 		}
 		else if (character.X >= max_map_x - 698)
 		{
-			var right = max_map_x - other_players.X[i];
+			var right = max_map_x - other_players.X[index];
 			//var left = abs(other_players.X[index] - character.X);
 			//var left = $("#PLAYER_"+ other_players.real_id[i]).position().left + (other_players.X[index] - character.X);
 			$("#PLAYER_"+ other_players.real_id[i]).css({"right": right +"px"});
+			
+			console.log("Czemu to nie działa?");
 		}
 	}
 };
@@ -518,7 +520,7 @@ players.prototype.conditions_y = function ()
 		}
 		else if (character.Y >= max_map_y - 353)
 		{
-			var bottom = max_map_y - other_players.Y[i];
+			var bottom = max_map_y - other_players.Y[index];
 			//var top = $("#PLAYER_"+ other_players.real_id[i]).position().top + (other_players.Y[index] - character.Y);
 			$("#PLAYER_"+ other_players.real_id[i]).css({"bottom": bottom +"px"});
 		}
