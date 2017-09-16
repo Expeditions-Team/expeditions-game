@@ -1,6 +1,6 @@
 {
   "name": "Expeditions_Project",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Minimalistyczny serwer gry",
   "main": "server.js",
   "dependencies": {
