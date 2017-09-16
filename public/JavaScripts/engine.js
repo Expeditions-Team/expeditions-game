@@ -74,14 +74,15 @@ player.prototype.handling_info = function ()
 	{
 		//other_players.calculate_map_position(data.real_id);
 		
-		other_players.conditions_y();
-		other_players.conditions_x();
 		
 		console.log(data.real_id +"["+ data.X +"]["+ data.Y +"]");
 		var index = other_players.real_id.indexOf(data.real_id);
 		
 		other_players.X[index] = data.X;
 		other_players.Y[index] = data.Y;
+		
+		other_players.conditions_y(index);
+		other_players.conditions_x(index);
 	});
 	
 	socket.on('info_about_me', function (data)
@@ -476,55 +477,55 @@ players.prototype.set_player = function (real_id)
 	other_players.conditions_y(real_id);
 };
 
-players.prototype.conditions_x = function ()
+players.prototype.conditions_x = function (index)
 {	
-	for (var i = 0; i < max_players; i++)
-	{
-		var index = other_players.real_id.indexOf(other_players.real_id[i]);
+	//for (var i = 0; i < max_players; i++)
+	//{
+		//var index = other_players.real_id.indexOf(other_players.real_id[i]);
 		
 		if (character.X <= 666)
 		{
-			$("#PLAYER_"+ other_players.real_id[i]).css({"left": other_players.X[index] +"px"});
+			$("#PLAYER_"+ other_players.real_id[index]).css({"left": other_players.X[index] +"px"});
 		}
 		else if (character.X > 666 && character.X < max_map_x - 698)
 		{
 			var left = 666 + (other_players.X[index] - character.X);
-			$("#PLAYER_"+ other_players.real_id[i]).css({"left": left +"px"});
+			$("#PLAYER_"+ other_players.real_id[index]).css({"left": left +"px"});
 		}
 		else if (character.X >= max_map_x - 698)
 		{
 			var right = (max_map_x - other_players.X[index]);
 			//var left = abs(other_players.X[index] - character.X);
 			//var left = $("#PLAYER_"+ other_players.real_id[i]).position().left + (other_players.X[index] - character.X);
-			$("#PLAYER_"+ other_players.real_id[i]).css({"right": right +"px"});
+			$("#PLAYER_"+ other_players.real_id[index]).css({"right": right +"px"});
 			
 			console.log("Czemu to nie działa? "+ index +" | "+ other_players.real_id[i]);
 		}
-	}
+	//}
 };
 
-players.prototype.conditions_y = function ()
+players.prototype.conditions_y = function (index)
 {
-	for (var i = 0; i < max_players; i++)
-	{
-		var index = other_players.real_id.indexOf(other_players.real_id[i]);
+	//for (var i = 0; i < max_players; i++)
+	//{
+		//var index = other_players.real_id.indexOf(other_players.real_id[i]);
 		
 		if (character.Y <= 304)
 		{
-			$("#PLAYER_"+ other_players.real_id[i]).css({"top": other_players.Y[index] +"px"});
+			$("#PLAYER_"+ other_players.real_id[index]).css({"top": other_players.Y[index] +"px"});
 		}
 		else if (character.Y > 304 && character.Y < max_map_y - 353)
 		{
 			var top = 304 + (other_players.Y[index] - character.Y);
-			$("#PLAYER_"+ other_players.real_id[i]).css({"top": top +"px"});
+			$("#PLAYER_"+ other_players.real_id[index]).css({"top": top +"px"});
 		}
 		else if (character.Y >= max_map_y - 353)
 		{
 			var bottom = max_map_y - other_players.Y[index];
 			//var top = $("#PLAYER_"+ other_players.real_id[i]).position().top + (other_players.Y[index] - character.Y);
-			$("#PLAYER_"+ other_players.real_id[i]).css({"bottom": bottom +"px"});
+			$("#PLAYER_"+ other_players.real_id[index]).css({"bottom": bottom +"px"});
 		}
-	}
+	/}
 };
 
 
