@@ -5,7 +5,9 @@ var	express = require('express'),
 		io 		= require('socket.io')(server),
 		morgan	= require('morgan');
 		
-server.listen(8080);
+server.listen(8080, '0.0.0.0', function() {
+  console.log("Server running.");
+});
     
 Object.assign=require('object-assign')
 
