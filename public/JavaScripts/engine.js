@@ -497,7 +497,8 @@ players.prototype.conditions_x = function ()
 			var right = max_map_x - other_players.X[tab_id] - 31;
 			//var left = abs(other_players.X[index] - character.X);
 			//var left = $("#PLAYER_"+ other_players.real_id[i]).position().left + (other_players.X[index] - character.X);
-			$(other_players.div_id[tab_id]).css({"left": "auto", "right": right +"px"});
+			$(other_players.div_id[tab_id]).prop("style").removeProperty("left");
+			$(other_players.div_id[tab_id]).css({"right": right +"px"});
 			
 			//console.log(max_map_x +" - "+ other_players.X[tab_id] +" = "+ right);
 		}
@@ -631,4 +632,5 @@ function simulateKeyDown(character) {
 }
 
 var version = "v0.0.4", description = "Naprawianie chodzenia (Skraje mapy)";
-$("#often_used_items").text(version +"\n"+ description);
+$("#life_bar").text(version);
+$("#mana_bar").text(description);
