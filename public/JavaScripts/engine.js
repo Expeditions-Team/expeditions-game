@@ -81,8 +81,8 @@ player.prototype.handling_info = function ()
 		other_players.X[index] = data.X;
 		other_players.Y[index] = data.Y;
 		
-		other_players.conditions_y(data.real_id);
-		other_players.conditions_x(data.real_id);
+		other_players.conditions_y();
+		other_players.conditions_x();
 	});
 	
 	socket.on('info_about_me', function (data)
