@@ -62,10 +62,12 @@ function player (nick)//id, real_id, nick, map, X, Y, hp, max_hp, mana, max_mana
 /*
 							Prototypy klasy gracza
 */
-player.prototype.calculate_map_position = function ()
+player.prototype.calculate_map_position = function (real_id)
 {
 	this.conditions_x();
 	this.conditions_y();
+	//other_players.conditions_x();
+	//other_players.conditions_y();
 };
 
 player.prototype.handling_info = function ()
@@ -116,7 +118,7 @@ player.prototype.handling_info = function ()
 			
 			if (other_players.real_id[i] == undefined)
 			{
-				other_players.id[i] = "PLAYER_"+ data.real_id;
+				other_players.div_id[i] = "PLAYER_"+ data.real_id;
 				other_players.real_id[i] = data.real_id;
 				other_players.nick[i] = data.nick;
 				other_players.X[i] = data.X;
@@ -142,7 +144,7 @@ player.prototype.handling_info = function ()
 			
 			if (other_players.real_id[i] == undefined)
 			{
-				other_players.id[i] = "PLAYER_"+ data.real_id;
+				other_players.div_id[i] = "PLAYER_"+ data.real_id;
 				other_players.real_id[i] = data.real_id;
 				other_players.nick[i] = data.nick;
 				other_players.X[i] = data.X;
@@ -442,7 +444,7 @@ player.prototype.conditions_y = function ()
 */
 function players ()
 {
-	this.id = new Array(max_players);		//Konstruktor
+	this.div_id = new Array(max_players);		//Konstruktor
 	this.real_id = new Array(max_players);
 	this.nick = new Array(max_players);
 	this.X = new Array(max_players);
@@ -473,61 +475,55 @@ players.prototype.set_player = function (real_id)
 {
 	$("#main_box").append('<div id="PLAYER_'+ real_id +'" class="player">'+ real_id +'</div>');
 	
-	var index = other_players.real_id.indexOf(real_id);
-	
-	other_players.conditions_x(real_id);
-	other_players.conditions_y(real_id);
+	other_players.conditions_x();
+	other_players.conditions_y();
 };
-											//Komentarze do usunięcia w conditions_x/y
+
 players.prototype.conditions_x = function ()
-{	
-	for (var i = 0; i < max_players; i++)
-	{	
-		var index = other_players.real_id.indexOf(other_players.real_id[i]);
-		
+{
+	for (var tab_id = 0; tab_id < other_players.real_id.length; tab_id++)
+	{
 		if (character.X <= 666)
 		{
-			$("#PLAYER_"+ other_players.real_id[i]).css({"left": other_players.X[index] +"px"});
+			$(other_players.div_id[tab_id]).css({"left": other_players.X[tab_id] +"px"});
 		}
 		else if (character.X > 666 && character.X < max_map_x - 698)
 		{
-			var left = 666 + (other_players.X[index] - character.X);
-			$("#PLAYER_"+ other_players.real_id[i]).css({"left": left +"px"});
+			var left = 666 + (other_players.X[tab_id] - character.X);
+			$(other_players.div_id[tab_id]).css({"left": left +"px"});
 		}
 		else if (character.X >= max_map_x - 698)
 		{
-			var right = (max_map_x - other_players.X[index]);
+			var right = (max_map_x - other_players.X[tab_id]);
 			//var left = abs(other_players.X[index] - character.X);
 			//var left = $("#PLAYER_"+ other_players.real_id[i]).position().left + (other_players.X[index] - character.X);
-			$("#PLAYER_"+ other_players.real_id[i]).css({"right": right +"px"});
+			$(other_players.div_id[tab_id]).css({"right": right +"px"});
 			
 			console.log("Czemu to nie działa? "+ max_map_x +" - "+ other_players.X[i] +" = "+ right);
 		}
-		
-		console.log("index = "+ index +"; other_players.real_id[index] =  "+ other_players.real_id[index] +"; other_players.real_id[i] = "+ other_players.real_id[i]);
+
+		console.log("other_players.id[tab_id] = "+ other_players.div_id[tab_id] +"; other_players.X[tab_id] =  "+ other_players.X[tab_id] +";");
 	}
 };
 
 players.prototype.conditions_y = function ()
 {
-	for (var i = 0; i < max_players; i++)
+	for (var tab_id = 0; tab_id < other_players.real_id.length; tab_id++)
 	{
-		var index = other_players.real_id.indexOf(other_players.real_id[i]);
-		
 		if (character.Y <= 304)
 		{
-			$("#PLAYER_"+ other_players.real_id[i]).css({"top": other_players.Y[i] +"px"});
+			$(other_players.div_id[tab_id]).css({"top": other_players.Y[tab_id] +"px"});
 		}
 		else if (character.Y > 304 && character.Y < max_map_y - 353)
 		{
-			var top = 304 + (other_players.Y[i] - character.Y);
-			$("#PLAYER_"+ other_players.real_id[i]).css({"top": top +"px"});
+			var top = 304 + (other_players.Y[tab_id] - character.Y);
+			$(other_players.div_id[tab_id]).css({"top": top +"px"});
 		}
 		else if (character.Y >= max_map_y - 353)
 		{
-			var bottom = max_map_y - other_players.Y[i];
+			var bottom = max_map_y - other_players.Y[tab_id];
 			//var top = $("#PLAYER_"+ other_players.real_id[i]).position().top + (other_players.Y[index] - character.Y);
-			$("#PLAYER_"+ other_players.real_id[i]).css({"bottom": bottom +"px"});
+			$(other_players.div_id[tab_id]).css({"bottom": bottom +"px"});
 		}
 	}
 };
