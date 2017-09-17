@@ -504,7 +504,7 @@ players.prototype.conditions_x = function ()
 			console.log("Czemu to nie działa? "+ max_map_x +" - "+ other_players.X[i] +" = "+ right);
 		}
 		
-		console.log("other_players.real_id[index] =  "+ other_players.real_id[index] +"; other_players.real_id[i] = "+ other_players.real_id[i]);
+		console.log("index = "+ index +"; other_players.real_id[index] =  "+ other_players.real_id[index] +"; other_players.real_id[i] = "+ other_players.real_id[i]);
 	}
 };
 
