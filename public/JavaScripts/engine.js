@@ -118,7 +118,7 @@ player.prototype.handling_info = function ()
 			
 			if (other_players.real_id[i] == undefined)
 			{
-				other_players.div_id[i] = "PLAYER_"+ data.real_id;
+				other_players.div_id[i] = "#PLAYER_"+ data.real_id;
 				other_players.real_id[i] = data.real_id;
 				other_players.nick[i] = data.nick;
 				other_players.X[i] = data.X;
@@ -144,7 +144,7 @@ player.prototype.handling_info = function ()
 			
 			if (other_players.real_id[i] == undefined)
 			{
-				other_players.div_id[i] = "PLAYER_"+ data.real_id;
+				other_players.div_id[i] = "#PLAYER_"+ data.real_id;
 				other_players.real_id[i] = data.real_id;
 				other_players.nick[i] = data.nick;
 				other_players.X[i] = data.X;
