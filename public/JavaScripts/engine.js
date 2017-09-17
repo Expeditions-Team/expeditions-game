@@ -494,15 +494,15 @@ players.prototype.conditions_x = function ()
 		}
 		else if (character.X >= max_map_x - 698)
 		{
-			var right = (max_map_x - other_players.X[tab_id] - 31);
+			var right = max_map_x - other_players.X[tab_id] - 31;
 			//var left = abs(other_players.X[index] - character.X);
 			//var left = $("#PLAYER_"+ other_players.real_id[i]).position().left + (other_players.X[index] - character.X);
 			$(other_players.div_id[tab_id]).css({"left": "auto", "right": right +"px"});
 			
-			console.log("Czemu to nie działa? "+ max_map_x +" - "+ other_players.X[tab_id] +" = "+ right);
+			//console.log(max_map_x +" - "+ other_players.X[tab_id] +" = "+ right);
 		}
 
-		console.log("other_players.id[tab_id] = "+ other_players.div_id[tab_id] +"; other_players.X[tab_id] = "+ other_players.X[tab_id] +";");
+		//console.log("other_players.id[tab_id] = "+ other_players.div_id[tab_id] +"; other_players.X[tab_id] = "+ other_players.X[tab_id] +";");
 	}
 };
 
@@ -521,9 +521,9 @@ players.prototype.conditions_y = function ()
 		}
 		else if (character.Y >= max_map_y - 353)
 		{
-			var bottom = max_map_y - other_players.Y[tab_id];
+			var bottom = max_map_y - other_players.Y[tab_id] - 47;
 			//var top = $("#PLAYER_"+ other_players.real_id[i]).position().top + (other_players.Y[index] - character.Y);
-			$(other_players.div_id[tab_id]).css({"bottom": bottom +"px"});
+			$(other_players.div_id[tab_id]).css({"top": "auto", "bottom": bottom +"px"});
 		}
 	}
 };
@@ -624,8 +624,11 @@ shoutbox.prototype.handling_info = function ()
 
 
 /*
-							Luźne funkcje
+							Luźne funkcje i zmienne
 */
 function simulateKeyDown(character) {
   jQuery.event.trigger({ type : 'keydown', which : character.charCodeAt(0) });
 }
+
+var version = "v0.0.4", description = "Naprawianie chodzenia (Skraje mapy)";
+$("#often_used_items").text(version +"\n"+ description);
