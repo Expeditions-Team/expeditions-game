@@ -444,12 +444,12 @@ player.prototype.conditions_y = function ()
 */
 function players ()
 {
-	this.div_id = new Array(max_players);		//Konstruktor
-	this.real_id = new Array(max_players);
-	this.nick = new Array(max_players);
-	this.X = new Array(max_players);
-	this.Y = new Array(max_players);
-	this.lvl = new Array(max_players);
+	this.div_id = new Array();		//Konstruktor
+	this.real_id = new Array();
+	this.nick = new Array();
+	this.X = new Array();
+	this.Y = new Array();
+	this.lvl = new Array();
 	
 	
 	
@@ -502,7 +502,7 @@ players.prototype.conditions_x = function ()
 			console.log("Czemu to nie działa? "+ max_map_x +" - "+ other_players.X[i] +" = "+ right);
 		}
 
-		console.log("other_players.id[tab_id] = "+ other_players.div_id[tab_id] +"; other_players.X[tab_id] =  "+ other_players.X[tab_id] +";");
+		console.log("other_players.id[tab_id] = "+ other_players.div_id[tab_id] +"; other_players.X[tab_id] = "+ other_players.X[tab_id] +";");
 	}
 };
 
