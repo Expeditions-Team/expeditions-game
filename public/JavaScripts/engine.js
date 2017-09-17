@@ -505,7 +505,7 @@ players.prototype.conditions_x = function ()
 		}
 		
 		console.log("other_players.real_id[index] =  "+ other_players.real_id[index] +"; other_players.real_id[i] = "+ other_players.real_id[i]);
-	//}
+	}
 };
 
 players.prototype.conditions_y = function ()
