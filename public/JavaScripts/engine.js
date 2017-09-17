@@ -482,8 +482,6 @@ players.prototype.conditions_x = function (real_id)
 {	
 	for (var i = 0; i < max_players; i++)
 	{	
-		var index = other_players.real_id.indexOf(other_players.real_id[i]);
-		
 		if (character.X <= 666)
 		{
 			$("#PLAYER_"+ other_players.real_id[i]).css({"left": other_players.X[i] +"px"});
@@ -509,20 +507,20 @@ players.prototype.conditions_y = function (real_id)
 {
 	for (var i = 0; i < max_players; i++)
 	{
-		var index = other_players.real_id.indexOf(other_players.real_id[i]);
+		//var index = other_players.real_id.indexOf(other_players.real_id[i]);
 		
 		if (character.Y <= 304)
 		{
-			$("#PLAYER_"+ other_players.real_id[i]).css({"top": other_players.Y[index] +"px"});
+			$("#PLAYER_"+ other_players.real_id[i]).css({"top": other_players.Y[i] +"px"});
 		}
 		else if (character.Y > 304 && character.Y < max_map_y - 353)
 		{
-			var top = 304 + (other_players.Y[index] - character.Y);
+			var top = 304 + (other_players.Y[i] - character.Y);
 			$("#PLAYER_"+ other_players.real_id[i]).css({"top": top +"px"});
 		}
 		else if (character.Y >= max_map_y - 353)
 		{
-			var bottom = max_map_y - other_players.Y[index];
+			var bottom = max_map_y - other_players.Y[i];
 			//var top = $("#PLAYER_"+ other_players.real_id[i]).position().top + (other_players.Y[index] - character.Y);
 			$("#PLAYER_"+ other_players.real_id[i]).css({"bottom": bottom +"px"});
 		}
