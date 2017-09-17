@@ -499,7 +499,7 @@ players.prototype.conditions_x = function ()
 			//var left = $("#PLAYER_"+ other_players.real_id[i]).position().left + (other_players.X[index] - character.X);
 			$(other_players.div_id[tab_id]).css({"right": right +"px"});
 			
-			console.log("Czemu to nie działa? "+ max_map_x +" - "+ other_players.X[i] +" = "+ right);
+			console.log("Czemu to nie działa? "+ max_map_x +" - "+ other_players.X[tab_id] +" = "+ right);
 		}
 
 		console.log("other_players.id[tab_id] = "+ other_players.div_id[tab_id] +"; other_players.X[tab_id] = "+ other_players.X[tab_id] +";");

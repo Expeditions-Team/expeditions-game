@@ -1,7 +1,7 @@
 {
   "name": "Expeditions_Project",
-  "version": "0.0.3",
-  "description": "Minimalistyczny serwer gry",
+  "version": "0.0.4",
+  "description": "Minimalistyczny serwer gry - Do naprawienia skraje mapy",
   "main": "server.js",
   "dependencies": {
     "chai": "^3.5.0",
