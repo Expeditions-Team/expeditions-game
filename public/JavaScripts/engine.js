@@ -500,7 +500,7 @@ players.prototype.conditions_x = function (real_id)
 			
 			console.log("Czemu to nie działa? "+ max_map_x +" - "+ other_players.X[i] +" = "+ right);
 		}
-	//}
+	}
 };
 
 players.prototype.conditions_y = function (real_id)
@@ -524,7 +524,7 @@ players.prototype.conditions_y = function (real_id)
 			//var top = $("#PLAYER_"+ other_players.real_id[i]).position().top + (other_players.Y[index] - character.Y);
 			$("#PLAYER_"+ other_players.real_id[i]).css({"bottom": bottom +"px"});
 		}
-	//}
+	}
 };
 
 
