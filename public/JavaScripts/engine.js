@@ -478,10 +478,12 @@ players.prototype.set_player = function (real_id)
 	other_players.conditions_y(real_id);
 };
 											//Komentarze do usunięcia w conditions_x/y
-players.prototype.conditions_x = function (real_id)
+players.prototype.conditions_x = function ()
 {	
 	for (var i = 0; i < max_players; i++)
 	{	
+		var index = other_players.real_id.indexOf(other_players.real_id[i]);
+		
 		if (character.X <= 666)
 		{
 			$("#PLAYER_"+ other_players.real_id[i]).css({"left": other_players.X[i] +"px"});
@@ -503,11 +505,11 @@ players.prototype.conditions_x = function (real_id)
 	}
 };
 
-players.prototype.conditions_y = function (real_id)
+players.prototype.conditions_y = function ()
 {
 	for (var i = 0; i < max_players; i++)
 	{
-		//var index = other_players.real_id.indexOf(other_players.real_id[i]);
+		var index = other_players.real_id.indexOf(other_players.real_id[i]);
 		
 		if (character.Y <= 304)
 		{
@@ -524,11 +526,7 @@ players.prototype.conditions_y = function (real_id)
 			//var top = $("#PLAYER_"+ other_players.real_id[i]).position().top + (other_players.Y[index] - character.Y);
 			$("#PLAYER_"+ other_players.real_id[i]).css({"bottom": bottom +"px"});
 		}
-<<<<<<< HEAD
 	}
-=======
-	/}
->>>>>>> parent of 6bd32c6... Walking tests
 };
 
 
