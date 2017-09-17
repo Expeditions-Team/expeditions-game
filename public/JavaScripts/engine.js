@@ -74,6 +74,7 @@ player.prototype.handling_info = function ()
 	{
 		//other_players.calculate_map_position(data.real_id);
 		
+		var index = other_players.real_id.indexOf(other_players.real_id);
 		
 		console.log(data.real_id +"["+ data.X +"]["+ data.Y +"]");
 		
