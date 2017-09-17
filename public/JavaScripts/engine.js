@@ -487,22 +487,24 @@ players.prototype.conditions_x = function ()
 		
 		if (character.X <= 666)
 		{
-			$("#PLAYER_"+ other_players.real_id[i]).css({"left": other_players.X[i] +"px"});
+			$("#PLAYER_"+ other_players.real_id[index]).css({"left": other_players.X[i] +"px"});
 		}
 		else if (character.X > 666 && character.X < max_map_x - 698)
 		{
 			var left = 666 + (other_players.X[i] - character.X);
-			$("#PLAYER_"+ other_players.real_id[i]).css({"left": left +"px"});
+			$("#PLAYER_"+ other_players.real_id[index]).css({"left": left +"px"});
 		}
 		else if (character.X >= max_map_x - 698)
 		{
 			var right = (max_map_x - other_players.X[i]);
 			//var left = abs(other_players.X[index] - character.X);
 			//var left = $("#PLAYER_"+ other_players.real_id[i]).position().left + (other_players.X[index] - character.X);
-			$("#PLAYER_"+ other_players.real_id[i]).css({"right": right +"px"});
+			$("#PLAYER_"+ other_players.real_id[index]).css({"right": right +"px"});
 			
 			console.log("Czemu to nie działa? "+ max_map_x +" - "+ other_players.X[i] +" = "+ right);
 		}
+		
+		console.log("other_players.real_id[index] =  "+ other_players.real_id[index] +"; other_players.real_id[i] = "+ other_players.real_id[i]);
 	}
 };
 
