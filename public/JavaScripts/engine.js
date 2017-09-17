@@ -497,7 +497,7 @@ players.prototype.conditions_x = function ()
 			var right = (max_map_x - other_players.X[tab_id]);
 			//var left = abs(other_players.X[index] - character.X);
 			//var left = $("#PLAYER_"+ other_players.real_id[i]).position().left + (other_players.X[index] - character.X);
-			$(other_players.div_id[tab_id]).css({"right": right +"px"});
+			$(other_players.div_id[tab_id]).css({"left": "", "right": right +"px"});
 			
 			console.log("Czemu to nie działa? "+ max_map_x +" - "+ other_players.X[tab_id] +" = "+ right);
 		}
